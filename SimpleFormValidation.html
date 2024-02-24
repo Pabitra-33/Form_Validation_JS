@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script type="text/javascript">
+        var regexpforname=(/^[A-z]+$/);
+        var regexpforemail=(/^[a-zA-Z]+[a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,6}$/);
+        var regexpforphone=(/^\d{10,10}$/);
+
+        function Validate(){
+            var name = document.myForm.Name.value;
+            var email = document.myForm.Email.value;
+            var zipcode = document.myForm.Zip.value;
+            var country = document.myForm.Country.value;
+
+            if(name == ""){
+                alert("Please provide your name!");
+                document.myForm.Name.focus();
+                return false;
+            }
+            else if(name.length<5 || name.length>20){
+                alert("Please provide your valid name!");
+                document.myForm.Name.focus();
+                return false;
+            }
+            else if(name.search(regexpforname)<0){
+                alert("Please provide your valid name!");
+                document.myForm.Name.focus();
+                return false;
+            }
+
+            if(email == ""){
+                alert("Please provide your Email!");
+                document.myForm.Email.focus();
+                return false;
+            }
+            else if(email.search(regexpforemail) < 0){
+                alert("Please provide your valid  Email!");
+                document.myForm.Email.focus();
+                return false;
+            }
+
+            if(zipcode == "" || isNaN(document.myForm.Zip.value)|| document.myForm.Zip.value.length != 6){
+                alert("Please provide a zip in the format ######.");
+                document.myForm.Zip.focus();
+                return false;
+            }
+            
+            if(country == "-1"){
+                alert("Please provide your country!");
+                return false;
+            }
+            alert("You Entered correct Data. \n\n Form submitted successfully");
+            return(true);
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm" onsubmit="return (Validate())">
+    <table allign="center" cellspacing="2" cellpading="2" boarder="0">
+        <tr>
+            <td allign="center" colspan="2"><b>Registration Form</b></td>
+        </tr>
+        <tr>
+            <td allign="left">Name :</td>
+            <td><input type="text" name="Name" size="40"/></td>
+        </tr>
+        <tr>
+            <td allign="left">Email :</td>
+            <td><input type="text" name="Email" size="40"/></td>
+        </tr>
+        <tr>
+            <td allign="left">Zip code :</td>
+            <td><input type="text" name="Zip"/></td>
+        </tr>
+        <tr>
+            <td allign="left">Country :</td>
+            <td><select name="Country">
+                <option value="-1" selected>Select Country</option>
+                <option value="1">INDIA</option>
+                <option value="2">USA</option>
+                <option value="3">UK</option>
+            </select></td>
+        </tr>
+            <td align="right"></td>
+            <td><input type="button" name="submit" value="Submit"/></td>
+        </tr>
+    </table>
+</form>
+   
+</body>
+</html>
