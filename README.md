@@ -11,7 +11,7 @@ Some basic functionalities of a Form Validation are :
 . Email Validation: Ensure that email inputs match a valid email format.<br>
 . Password Strength: Validate if the password meets certain complexity requirements (e.g., minimum length, containing both letters and numbers).<br>
 . Confirmation Fields: Compare two fields (like password and confirm password) to ensure they match.<br>
-. Dropdown Selection: Ensure that a dropdown menu has a selected option.<br>
+. Dropdown Selection: Ensure that a dropdown menu has a selected option. <br>
 . Checkbox Validation: Check if at least one checkbox is checked if it's a required field.<br>
 . Error Messaging: Provide meaningful error messages for users.<br>
 . Form Submission: Only allow form submission if all validations pass.
