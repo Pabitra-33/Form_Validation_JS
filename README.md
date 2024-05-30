@@ -15,3 +15,4 @@ Some basic functionalities of a Form Validation are :
 . Checkbox Validation: Check if at least one checkbox is checked if it's a required field.<br>
 . Error Messaging: Provide meaningful error messages for users.<br>
 . Form Submission: Only allow form submission if all validations pass.
+So these are the basic functionalities of the form validation in Javascript.
